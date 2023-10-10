@@ -48,14 +48,14 @@ Welcome to the Django Rest Framework project! This repository contains a compreh
   ```
 
 4. Install the required dependencies:
-
+ ```
  pip install -r requirements.txt
-
+ ```
 
 5. Start the Django development server:
-
+ ```
  python manage.py runserver
-
+ ```
 
 6. Access the API at http://localhost:8000/ in your web browser.
 
@@ -68,9 +68,9 @@ To create a Python API client, follow the steps outlined in the project.
 ### Running the Django Project
 
 To run the Django project, execute the following command:
-
+ ```
  python manage.py runserver
-
+ ```
 
 
 ### Creating Your First API View
