@@ -1,7 +1,8 @@
 import requests
 
 
-endpoint = "https://httpbin.org/anything"
+# endpoint = "https://httpbin.org/anything"
+endpoint = "http://localhost:8000/"
 
 resonse = requests.get(endpoint, json={"message":"Suiii"})  #request
 
