@@ -25,7 +25,7 @@ Welcome to the Django Rest Framework project! This repository contains a compreh
 
 1. Clone this repository to your local machine:
  ```
- git clone https://github.com/yourusername/your-django-api.git
+ git clone https://github.com/AhmedDR200/Solid-Broccoli.git
  ```
 
 2. Create a Python virtual environment:
