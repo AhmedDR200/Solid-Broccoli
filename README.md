@@ -118,11 +118,6 @@ If you'd like to contribute to this project, please follow the guidelines in the
 This project is licensed under the [MIT License](LICENSE).
 
 
-## Acknowledgments
-
-- Mention any libraries, tools, or people whose work has been used or inspired by in this project.
-  
-
 ## Contact
 
 - Ahmed Magdy
