@@ -1,12 +1,11 @@
 import requests
 
 
-# endpoint = "https://httpbin.org/anything"
-endpoint = "http://localhost:8000/"
+endpoint = "http://localhost:8000/api/"
 
-resonse = requests.get(endpoint, json={"message":"Suiii"})  #request
+resonse = requests.get(endpoint,params={"abc":123}, json={"message":"Suiii"})  #request
 
-# print(resonse.text) # print raw text response
+print(resonse.text) # print raw text response
 print(resonse.json()) # print raw json response
 print(resonse.status_code)
 
