@@ -24,14 +24,14 @@ Welcome to the Django Rest Framework project! This repository contains a compreh
 ### Setup
 
 1. Clone this repository to your local machine:
-
+ ```
  git clone https://github.com/yourusername/your-django-api.git
-
+ ```
 
 2. Create a Python virtual environment:
-
+ ```
  python -m venv venv
-
+ ```
 
 3. Activate the virtual environment:
 
