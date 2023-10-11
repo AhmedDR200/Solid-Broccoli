@@ -5,6 +5,7 @@ from django.forms.models import model_to_dict
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from product.serializers import ProductSerializer
+from rest_framework import generics
 
 
 @api_view(['GET'])
@@ -28,3 +29,6 @@ def api_home_post(request, *args, **kwargs):
          data = serializer.save()
          print(serializer.data)
     return Response(serializer.data)
+
+
+
