@@ -10,3 +10,8 @@ class ProductDetail(generics.RetrieveAPIView):
      queryset = Product.objects.all()
      serializer_class = ProductSerializer
     #  lookup field = "pk"
+
+
+class ProductCreate(generics.CreateAPIView):
+     queryset=Product.objects.all()
+     serializer_class=ProductSerializer
