@@ -4,6 +4,7 @@ from product.models import Product
 from django.forms.models import model_to_dict
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from product.serializers import ProductSerializer
 
 
 @api_view(['GET'])
@@ -15,6 +16,6 @@ def api_home(request, *args, **kwargs):
         # data["title"] = model.title
         # data['content'] = model.content
         # data['price'] = model.price
-        data = model_to_dict(model, fields=("id","title","price"))
-
+        # data = model_to_dict(model, fields=("id","title","price","sale_price"))
+          data = ProductSerializer(model).data
     return Response(data)
