@@ -19,3 +19,12 @@ def api_home(request, *args, **kwargs):
         # data = model_to_dict(model, fields=("id","title","price","sale_price"))
           data = ProductSerializer(model).data
     return Response(data)
+
+
+@api_view(['POST'])
+def api_home_post(request, *args, **kwargs):
+    serializer = ProductSerializer(data=request.data)
+    if serializer.is_valid():
+         data = serializer.save()
+         print(serializer.data)
+    return Response(serializer.data)
