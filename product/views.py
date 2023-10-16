@@ -1,6 +1,6 @@
 from django.http import Http404
 from django.shortcuts import render
-from rest_framework import generics
+from rest_framework import generics, mixins
 from .models import Product
 from .serializers import ProductSerializer
 from rest_framework.decorators import api_view
@@ -43,3 +43,41 @@ def product_alt_view(request,pk=None ,*args, **kwargs):
      
      if method == "POST":
          pass
+    
+
+class ProductMixin(mixins.ListModelMixin,
+                   mixins.CreateModelMixin,
+                   generics.GenericAPIView):
+     queryset = Product.objects.all()
+     serializer_class = ProductSerializer
+     
+     def get(self, request, *args, **kwargs):
+          return self.list(request, *args, **kwargs)
+     
+     def post(self, request, *args, **kwargs):
+          return self.create(request)
+     
+
+
+class Create(mixins.CreateModelMixin, generics.GenericAPIView):
+     queryset = Product.objects.all()
+     serializer_class = ProductSerializer
+     
+     def post(self, request, *args, **kwargs):
+          return self.create(request)
+     
+     
+class ProductRetrieveView(mixins.RetrieveModelMixin, generics.GenericAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+
+    def get(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
+
+
+class ProductDestroyView(mixins.DestroyModelMixin, generics.GenericAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+
+    def delete(self, request, *args, **kwargs):
+        return self.destroy(request, *args, **kwargs)   
