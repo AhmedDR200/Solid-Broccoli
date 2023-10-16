@@ -1,6 +1,6 @@
 from django.http import Http404
 from django.shortcuts import render
-from rest_framework import generics, mixins
+from rest_framework import generics, mixins, permissions, authentication
 from .models import Product
 from .serializers import ProductSerializer
 from rest_framework.decorators import api_view
@@ -24,9 +24,20 @@ class ProductCreate(generics.CreateAPIView):
 class ProductList(generics.ListCreateAPIView):
      queryset = Product.objects.all().order_by('id')[:4]
      serializer_class = ProductSerializer
+     authentication_classes = [authentication.SessionAuthentication]
+     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
 
+
+
+
+
+
+
+
+
+# FBV
 @api_view(['GET','POST'])
 def product_alt_view(request,pk=None ,*args, **kwargs):
      method = request.method
@@ -44,7 +55,17 @@ def product_alt_view(request,pk=None ,*args, **kwargs):
      if method == "POST":
          pass
     
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+# Mixins
 class ProductMixin(mixins.ListModelMixin,
                    mixins.CreateModelMixin,
                    generics.GenericAPIView):
